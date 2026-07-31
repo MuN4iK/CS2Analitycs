@@ -1,64 +1,55 @@
-const headers = {
-    "Authorization": 'EGCDmegMQ2IUlN-xTuSWAys6Eh8RxOSZcFiBpMFkcwB1R5tvn58'
+async function api(path) {
+    const res = await fetch("/.netlify/functions/pandascore?path=" + encodeURIComponent(path))
+
+    if (!res.ok) {
+        throw new Error(`API Error: ${res.status}`);
+    }
+
+    return res.json()
 }
 
 export async function getTournaments(page) {
-    const res = await fetch(`https://api.pandascore.co/csgo/tournaments?page=${page}&per_page=6&`, { headers })
-    return res.json()
+    return api(`/csgo/tournaments?page=${page}&per_page=6&`)
 }
 export async function getTournamentsByType(type, page) {
-    const res = await fetch(`https://api.pandascore.co/csgo/tournaments/${type}?page=${page}&per_page=6&`, { headers })
-    return res.json()
+    return api(`/csgo/tournaments/${type}?page=${page}&per_page=6&`)
 }
 export async function getTournament(id) {
-    const res = await fetch(`https://api.pandascore.co/tournaments/${id}`, { headers })
-    return res.json()
+    return api(`/tournaments/${id}`)
 }
 export async function getTournamentMatches(id) {
-    const res = await fetch(`https://api.pandascore.co/tournaments/${id}/matches`, { headers })
-    return res.json()
+    return api(`/tournaments/${id}/matches`)
 }
 export async function getMatches() {
-    const res = await fetch(`https://api.pandascore.co/csgo/matches?page=1&per_page=8&`, { headers })
-    return res.json()
+    return api(`/csgo/matches?page=1&per_page=8&`)
 }
 export async function getTeams() {
-    const res = await fetch(`https://api.pandascore.co/csgo/teams`, { headers })
-    return res.json()
+    return api(`/csgo/teams`)
 }
 export async function getTeam(id) {
-    const res = await fetch(`https://api.pandascore.co/teams/${id}`, { headers })
-    return res.json()
+    return api(`/teams/${id}`)
 }
 export async function getTeamMatchs(id) {
-    const res = await fetch(`https://api.pandascore.co/teams/${id}/matches`, { headers })
-    return res.json()
+    return api(`/teams/${id}/matches`)
 }
 export async function getTeamLeague(id) {
-    const res = await fetch(`https://api.pandascore.co/teams/${id}/leagues`, { headers })
-    return res.json()
+    return api(`/teams/${id}/leagues`)
 }
 export async function getTeamSeries(id) {
-    const res = await fetch(`https://api.pandascore.co/teams/${id}/series`, { headers })
-    return res.json()
+    return api(`/teams/${id}/series`)
 }
 export async function getTeamTournaments(id) {
-    const res = await fetch(`https://api.pandascore.co/teams/${id}/tournaments`, { headers })
-    return res.json()
+    return api(`/teams/${id}/tournaments`)
 }
 export async function getPlayers() {
-    const res = await fetch(`https://api.pandascore.co/csgo/players`, { headers })
-    return res.json()
+    return api(`/csgo/players`)
 }
 export async function getPlayer(id) {
-    const res = await fetch(`https://api.pandascore.co/players/${id}`, { headers })
-    return res.json()
+    return api(`/players/${id}`)
 }
 export async function getPlayerMatches(id) {
-    const res = await fetch(`https://api.pandascore.co/players/${id}/matches`, { headers })
-    return res.json()
+    return api(`/players/${id}/matches`)
 }
 export async function getPlayerTournaments(id) {
-    const res = await fetch(`https://api.pandascore.co/players/${id}/tournaments`, { headers })
-    return res.json()
+    return api(`/players/${id}/tournaments`)
 }
