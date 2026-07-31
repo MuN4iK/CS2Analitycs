@@ -3,7 +3,7 @@ import MatchesCard from '../components/MatchesCard.jsx'
 import Card from 'react-bootstrap/Card';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import styles from '../assets/app.module.css';
+import styles from '../assets/App.module.css';
 import { getTournamentsByType } from '../service/api/pandascore.jsx';
 
 function TournamentsPage() {

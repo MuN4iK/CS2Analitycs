@@ -8,6 +8,6 @@ import { BrowserRouter } from 'react-router-dom'
 createRoot(document.getElementById('root')).render(
 
   <StrictMode>
-    <TeamsCacheProvider><BrowserRouter><App /> </BrowserRouter></TeamsCacheProvider>
-  </StrictMode>,
+    <BrowserRouter><App /> </BrowserRouter>
+  </StrictMode>
 )

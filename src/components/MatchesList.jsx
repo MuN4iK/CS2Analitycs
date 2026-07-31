@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../assets/MatchesList.module.css'
 import { useState } from 'react'
-import { useTeamCache } from '../service/api/teamCache'
 import { Link } from 'react-router-dom'
 
 export default function MatchesList({ data, getWinner }) {
