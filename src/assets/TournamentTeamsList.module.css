@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 15px;
+    gap: 25px;
+}
+
+.TeamCard {
+    display: flex;
+    border: 1px solid #2a2a2a;
+    background: linear-gradient(90deg,
+            #3b4252,
+            #4c566a,
+            #5e81ac);
+    background-size: 200% 100%;
+    background-position: left;
+    width: 20%;
+    height: 85px;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20.5px;
+    width: 290px;
+    height: 86px;
+    transition:
+        background-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.TeamCard:hover {
+    background-position: right;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+}
+
+.logoImage {
+    width: 23px;
+    height: 23px;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}

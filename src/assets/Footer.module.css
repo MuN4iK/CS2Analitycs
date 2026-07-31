@@ -1,0 +1,27 @@
+.Footer {
+    background: #1d2128;
+    border-top: 1px solid #3b4252;
+    color: #4c566a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+
+}
+
+.Footer a {
+    text-decoration: none;
+    color: #7998d6;
+}
+
+.FooterTitlte {
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    grid-column: 1/4;
+}
+
+.rights {
+    grid-column: 1/4;
+}

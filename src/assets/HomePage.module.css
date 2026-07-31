@@ -1,0 +1,118 @@
+.mainInfoContainer {
+    padding-top: 25px;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    background: linear-gradient(90deg,
+            #1e3a5f,
+            #295c7a,
+            #327c8d,
+            #295c7a,
+            #1e3a5f);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 6s linear infinite;
+}
+
+.mainInfoSiteTitle {
+    font-size: 45px;
+    padding-bottom: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mainInfo {
+    font-size: 25px;
+}
+
+.tournaments {
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    place-items: center;
+    gap: 35px;
+    padding: 4% 5% 5% 5%;
+}
+
+.tournamentsTitle {
+    grid-column: 1/3;
+    background: linear-gradient(90deg,
+            #3b4252,
+            #4c566a,
+            #5e81ac,
+            #88c0d0,
+            #5e81ac,
+            #3b4252);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 6s linear infinite;
+}
+
+@keyframes gradientFlow {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 300% 50%;
+    }
+
+}
+
+.tournamentsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+.tournamentsButton {
+    width: 100%;
+    height: 65px;
+    border-radius: 27px;
+    grid-column: 1/3;
+    background-position: left;
+    border: none;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    background: linear-gradient(90deg,
+            #3b4252,
+            #4c566a,
+            #5e81ac);
+    background-size: 200% 100%;
+    background-position: left;
+    transition:
+        background-position .4s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.tournamentsButton:hover {
+    background-position: right;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+}
+
+.matches {
+    display: grid;
+    place-items: center;
+}
+
+.matchesTitle {
+    grid-column: 1/3;
+    background: linear-gradient(90deg,
+            #3b4252,
+            #4c566a,
+            #5e81ac,
+            #88c0d0,
+            #5e81ac,
+            #3b4252);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 6s linear infinite;
+}

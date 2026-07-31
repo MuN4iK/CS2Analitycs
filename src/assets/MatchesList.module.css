@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    gap: 25px;
+}
+
+.MatchCard {
+    height: 100px;
+    display: grid;
+    border: 1px solid #2a2a2a;
+    background: linear-gradient(90deg,
+            #3b4252,
+            #4c566a,
+            #5e81ac);
+    background-size: 200% 100%;
+    background-position: left;
+    transition:
+        background-position .4s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+    width: 40%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    border-radius: 20.5px;
+}
+
+.MatchCard:hover {
+    background-position: right;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+}
+
+.MatchCardTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.MatchCard>div {
+    flex: 1;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: #ff9f1c;
+}
+
+.winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+img {
+    padding-left: 3px;
+    width: 25px;
+    height: 25px;
+}
