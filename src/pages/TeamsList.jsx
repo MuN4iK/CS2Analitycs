@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import styles from '../assets/TeamsList.module.css'
 import TournamentTeamsList from '../components/TournamentTeamsList'
 import { getTeams } from '../service/api/pandascore'
+import SearchingBar from '../components/SearchingBar'
 
 export default function TeamsList() {
     const [teamsData, setTeamsData] = useState([])
@@ -29,10 +30,7 @@ export default function TeamsList() {
     }
     return (
         <div className={styles.container}>
-            <div className={styles.sortingMenu}>
-                <img className={styles.searchingBarIcon} src='../../img/searchingBar.png' alt="" />
-                <input className={styles.searchingBar} type="text" placeholder='Searching...' onChange={(e) => { setSearchParam(e.target.value) }} />
-            </div>
+            <SearchingBar searchParam={searchParam} setSearchParam={setSearchParam} />
             <div className={styles.teamsList}>
                 <TournamentTeamsList searchParam={searchParam} teamsData={teamsData} />
             </div>

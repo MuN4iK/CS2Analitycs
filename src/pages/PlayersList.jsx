@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import styles from '../assets/PlayersList.module.css'
 import { getPlayers } from '../service/api/pandascore'
 import TournamentPlayersList from '../components/TournamentPlayersList'
+import SearchingBar from '../components/SearchingBar'
 
 export default function PlayersList() {
     const [playersData, setPlayersData] = useState([])
@@ -26,10 +27,7 @@ export default function PlayersList() {
     }
     return (
         <div className={styles.container}>
-            <div className={styles.sortingMenu}>
-                <img className={styles.searchingBarIcon} src='../../img/searchingBar.png' alt="" />
-                <input className={styles.searchingBar} type="text" placeholder='Searching...' onChange={(e) => { setSearchParam(e.target.value) }} />
-            </div>
+            <SearchingBar searchParam={searchParam} setSearchParam={setSearchParam} />
             <div className={styles.PlayersList}>
                 <TournamentPlayersList data={playersData} searchParam={searchParam} />
             </div>

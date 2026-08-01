@@ -5,6 +5,7 @@ import styles from "../assets/PlayerPage.module.css"
 import MatchesList from '../components/MatchesList'
 import MatchesCard from '../components/MatchesCard'
 import TournamentPlayersList from '../components/TournamentPlayersList'
+import { Link } from 'react-router-dom'
 
 export default function PlayerPage() {
     const [player, setPlayer] = useState([])
@@ -83,8 +84,11 @@ export default function PlayerPage() {
                     )}
                     {!player.current_team ? 'Current team:none' : (
                         <span className={styles.current_team}>
-                            Current team:{player.current_team.name}
-                            <img src={player.current_team.image_url ?? '../../public/img/unknown_team.png'} title={player.current_team.id} />
+                            Current team:
+                            <Link to={`/team/${player.current_team.id}`}>
+                                {player.current_team.name}
+                            </Link>
+                            <img src={player.current_team.image_url ?? '/img/unknown_team.png'} />
                         </span>
                     )}
                     <span>Matches played:{matches.filter((match) => match.status === 'finished').length}<sup style={{ color: winrateGradient(matchesWinrate) }}>{matchesWinrate}%  </sup></span>

@@ -5,30 +5,3 @@
     padding-bottom: 25px;
     gap: 25px;
 }
-
-.sortingMenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #555;
-    width: 50%;
-    border-radius: 20.5px;
-    height: 45px;
-}
-
-.searchingBar {
-    width: 95%;
-    border: none;
-    padding: 6px;
-    background-color: transparent;
-    color: white;
-    font-size: 15px;
-}
-
-.searchingBar:focus {
-    outline: none;
-}
-
-.searchingBarIcon {
-    padding: 6px 0 6px 6px;
-}

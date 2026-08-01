@@ -24,7 +24,7 @@ export async function getMatches() {
     return api(`/csgo/matches?page=1&per_page=8&`)
 }
 export async function getTeams() {
-    return api(`/csgo/teams`)
+    return api(`/csgo/teams?page=1&per_page=100`)
 }
 export async function getTeam(id) {
     return api(`/teams/${id}`)
@@ -42,7 +42,7 @@ export async function getTeamTournaments(id) {
     return api(`/teams/${id}/tournaments`)
 }
 export async function getPlayers() {
-    return api(`/csgo/players`)
+    return api(`/csgo/players?page=1&per_page=100`)
 }
 export async function getPlayer(id) {
     return api(`/players/${id}`)
