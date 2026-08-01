@@ -8,6 +8,7 @@ import SearchingBar from '../components/SearchingBar'
 export default function PlayersList() {
     const [playersData, setPlayersData] = useState([])
     const [searchParam, setSearchParam] = useState('')
+    const [sortParam, setSortParam] = useState('')
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         async function load() {

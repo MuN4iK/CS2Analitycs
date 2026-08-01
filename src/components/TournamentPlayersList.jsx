@@ -7,7 +7,7 @@ export default function TournamentPlayersList({ data, searchParam, teamLogo, exc
         <div className={styles.container} >{data
             .filter(player => player.name.toLowerCase().includes((searchParam ?? '').toLowerCase()))
             .filter(player => Number(player.id) !== Number(exception))
-            .sort((a, b) => { return a.name.localeCompare(b.name) })
+            .sort((a, b) => { a.name.localeCompare(b.name) })
             .map((player) => {
                 return (
                     <Link className={styles.link} to={`/player/${player.id}`} key={player.id}>

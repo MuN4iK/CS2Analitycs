@@ -1,15 +1,32 @@
 import React from 'react'
 import styles from '../assets/TournamentTeamsList.module.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function TournamentTeamsList({ tournamentTeams, teamsData, searchParam }) {
-    const [data, setData] = useState(tournamentTeams || teamsData || [])
+export default function TournamentTeamsList({ tournamentTeams, teamsData, searchParam, sortParam }) {
+    const data = tournamentTeams || teamsData || []
+    const visibleTeams = [...data]
+        .filter(team =>
+            team.name.toLowerCase().includes((searchParam ?? "").toLowerCase())
+        )
+        .sort((a, b) => {
+            switch (sortParam) {
+                case "Name":
+                    return a.name.localeCompare(b.name);
+
+                case "Players":
+                    return b.players.length - a.players.length;
+
+                default:
+                    return 0;
+            }
+        });
+
+    console.log(data[0]);
+
     return (
-        <div className={styles.container} >{data
-            .filter(team => team.name.toLowerCase().includes((searchParam ?? '').toLowerCase()))
-            .sort((a, b) => { return a.name.localeCompare(b.name) })
-            .map((team) => {
+        <div className={styles.container} >{
+            visibleTeams.map((team) => {
                 return (
                     <Link className={styles.link} to={`/team/${team.id}`} key={team.id}>
                         <div className={styles.TeamCard} >

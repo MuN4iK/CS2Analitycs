@@ -8,6 +8,7 @@ import SearchingBar from '../components/SearchingBar'
 export default function TeamsList() {
     const [teamsData, setTeamsData] = useState([])
     const [searchParam, setSearchParam] = useState('')
+    const [sortParam, setSortParam] = useState('Name')
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         async function load() {
@@ -30,9 +31,9 @@ export default function TeamsList() {
     }
     return (
         <div className={styles.container}>
-            <SearchingBar searchParam={searchParam} setSearchParam={setSearchParam} />
+            <SearchingBar searchParam={searchParam} setSearchParam={setSearchParam} teamPage={true} setSortParam={setSortParam} />
             <div className={styles.teamsList}>
-                <TournamentTeamsList searchParam={searchParam} teamsData={teamsData} />
+                <TournamentTeamsList searchParam={searchParam} teamsData={teamsData} sortParam={sortParam} />
             </div>
         </div>
     )

@@ -1,11 +1,31 @@
-.sortingMenu {
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.sortingMenuV1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #555;
     width: 50%;
     border-radius: 20.5px;
     height: 45px;
+    background: #2b3038;
+}
+
+.sortingMenuV2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-top-right-radius: 20.5px;
+    border-top-left-radius: 20.5px;
+    height: 45px;
+    background: #2b3038;
+    border-bottom: 1px solid #555;
 }
 
 .searchingBar {
@@ -23,4 +43,77 @@
 
 .searchingBarIcon {
     padding: 6px 0 6px 6px;
+}
+
+.searchingBarMoreButton {
+    width: 22px;
+    height: 22px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.dropdownMenu {
+    display: flex;
+    background: #2b3038;
+    width: 50%;
+    flex-direction: column;
+    border-bottom-right-radius: 20.5px;
+    border-bottom-left-radius: 20.5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    justify-content: stretch;
+}
+
+.dropdownMenuTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 48px;
+    font-size: 23px;
+    font-width: bold;
+}
+
+.dropdownMenuBottom {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.dropdownMenuBottomElem {
+    cursor: pointer;
+    border: 1px solid #555;
+    border-radius: 20.5px;
+    padding: 10px;
+}
+
+.dropdownMenuBottomElemActive {
+    cursor: pointer;
+    background: linear-gradient(90deg,
+            #1e3a5f,
+            #295c7a,
+            #327c8d,
+            #295c7a,
+            #1e3a5f);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 6s linear infinite;
+    border: 1px solid #555;
+    border-radius: 20.5px;
+    padding: 10px;
+}
+
+@keyframes gradientFlow {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 300% 50%;
+    }
+
 }
