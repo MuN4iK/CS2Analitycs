@@ -1,5 +1,5 @@
-import React, { use, useEffect, useState } from 'react'
-import { useBeforeUnload, useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { getPlayer, getPlayerMatches, getPlayerTournaments, getTeam } from '../service/api/pandascore'
 import styles from "../assets/PlayerPage.module.css"
 import MatchesList from '../components/MatchesList'

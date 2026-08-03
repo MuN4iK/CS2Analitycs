@@ -1,4 +1,4 @@
-import { createContext, useContext, useRef } from "react";
+import { createContext, useRef } from "react";
 import { getTeam } from "./pandascore";
 
 const TeamsCacheContext = createContext();
@@ -54,6 +54,6 @@ export function TeamsCacheProvider({ children }) {
 
 }
 
-export function useTeamCache() {
-    return useContext(TeamsCacheContext);
-}
+// export function useTeamCache() {
+//     return useContext(TeamsCacheContext);
+// }

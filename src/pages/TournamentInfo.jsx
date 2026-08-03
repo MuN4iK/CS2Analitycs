@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import styles from "../assets/TournamentInfo.module.css"
 import TournamentTeamsList from '../components/TournamentTeamsList'
 import MatchesList from '../components/MatchesList'
-import { getTeams, getTournamentMatches, getTournament } from '../service/api/pandascore.jsx'
+import { getTournamentMatches, getTournament } from '../service/api/pandascore.jsx'
 
 export default function TournamentInfo() {
     const { id } = useParams()
@@ -31,7 +31,7 @@ export default function TournamentInfo() {
             } catch (err) {
                 console.error(err)
             } finally {
-                setLoading(!loading)
+                setLoading(false)
             }
         }
         load()

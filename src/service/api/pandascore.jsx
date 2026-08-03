@@ -1,18 +1,28 @@
 async function api(path) {
-    const res = await fetch("/.netlify/functions/pandascore?path=" + encodeURIComponent(path))
+    const res = await fetch(
+        "/.netlify/functions/pandascore?path=" + encodeURIComponent(path)
+    );
 
     if (!res.ok) {
         throw new Error(`API Error: ${res.status}`);
     }
 
-    return res.json()
+    const data = await res.json();
+
+
+    return data;
+}
+const types = {
+    All: "/csgo/tournaments",
+    Running: "/csgo/tournaments/running",
+    Upcoming: "/csgo/tournaments/upcoming",
+    Past: "/csgo/tournaments/past"
 }
 
-export async function getTournaments(page) {
-    return api(`/csgo/tournaments?page=${page}&per_page=6&`)
-}
-export async function getTournamentsByType(type, page) {
-    return api(`/csgo/tournaments/${type}?page=${page}&per_page=6&`)
+export async function getTournamentsByType(sortParam, page) {
+    const endpoint = types[sortParam]
+    console.log(endpoint)
+    return api(`${endpoint}?page=${page}&per_page=9`)
 }
 export async function getTournament(id) {
     return api(`/tournaments/${id}`)

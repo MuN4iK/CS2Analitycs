@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from '../assets/HomePage.module.css'
 import { useEffect, useState } from 'react'
 import { getMatches, getTournamentsByType } from '../service/api/pandascore'

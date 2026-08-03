@@ -1,4 +1,3 @@
-import React, { use } from 'react'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import styles from '../assets/TeamPage.module.css'
@@ -46,10 +45,11 @@ export default function TeamPage() {
                 console.error(err)
             } finally {
                 setLoading(false)
+                setShownInfo('players')
             }
         }
         load()
-        setShownInfo('players')
+
     }, [id])
     if (loading) {
         return (<h1>Loading...</h1>)

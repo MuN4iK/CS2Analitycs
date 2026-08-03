@@ -1,4 +1,3 @@
-import React, { use } from 'react'
 import { useEffect, useState } from 'react'
 import styles from '../assets/PlayersList.module.css'
 import { getPlayers } from '../service/api/pandascore'
@@ -8,7 +7,7 @@ import SearchingBar from '../components/SearchingBar'
 export default function PlayersList() {
     const [playersData, setPlayersData] = useState([])
     const [searchParam, setSearchParam] = useState('')
-    const [sortParam, setSortParam] = useState('')
+    const [sortParam, setSortParam] = useState('Name')
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         async function load() {
@@ -18,7 +17,7 @@ export default function PlayersList() {
             } catch (err) {
                 console.error(err)
             } finally {
-                setLoading(!loading)
+                setLoading(false)
             }
         }
         load()
@@ -28,7 +27,7 @@ export default function PlayersList() {
     }
     return (
         <div className={styles.container}>
-            <SearchingBar searchParam={searchParam} setSearchParam={setSearchParam} />
+            <SearchingBar searchParam={searchParam} setSearchParam={setSearchParam} page={'Players'} sortParam={sortParam} setSortParam={setSortParam} />
             <div className={styles.PlayersList}>
                 <TournamentPlayersList data={playersData} searchParam={searchParam} />
             </div>

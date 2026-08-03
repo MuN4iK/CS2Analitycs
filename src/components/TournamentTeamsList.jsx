@@ -1,6 +1,4 @@
-import React from 'react'
 import styles from '../assets/TournamentTeamsList.module.css'
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function TournamentTeamsList({ tournamentTeams, teamsData, searchParam, sortParam }) {
@@ -22,7 +20,6 @@ export default function TournamentTeamsList({ tournamentTeams, teamsData, search
             }
         });
 
-    console.log(data[0]);
 
     return (
         <div className={styles.container} >{

@@ -1,4 +1,3 @@
-import React, { use } from 'react'
 import { useEffect, useState } from 'react'
 import styles from '../assets/TeamsList.module.css'
 import TournamentTeamsList from '../components/TournamentTeamsList'
@@ -18,7 +17,7 @@ export default function TeamsList() {
             } catch (err) {
                 console.error(err)
             } finally {
-                setLoading(!loading)
+                setLoading(false)
             }
         }
         load()
@@ -31,7 +30,7 @@ export default function TeamsList() {
     }
     return (
         <div className={styles.container}>
-            <SearchingBar searchParam={searchParam} setSearchParam={setSearchParam} teamPage={true} setSortParam={setSortParam} />
+            <SearchingBar searchParam={searchParam} setSearchParam={setSearchParam} page={'Teams'} setSortParam={setSortParam} sortParam={sortParam} />
             <div className={styles.teamsList}>
                 <TournamentTeamsList searchParam={searchParam} teamsData={teamsData} sortParam={sortParam} />
             </div>

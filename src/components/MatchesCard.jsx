@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import styles from "../assets/card.module.css"
 import { Link } from 'react-router-dom';
 
@@ -6,7 +5,7 @@ function MatchesCard({ data }) {
     return (
         <>
             {
-                data.map((tournament) => {
+                (data ?? []).map((tournament) => {
                     const formattedStartDate = new Date(tournament.begin_at).toDateString()
                     const formattedEndDate = new Date(tournament.end_at).toDateString()
                     return (

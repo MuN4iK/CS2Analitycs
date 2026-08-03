@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import TournamentsPage from './pages/TournamentsPage';
 import Layout from './Layout';
