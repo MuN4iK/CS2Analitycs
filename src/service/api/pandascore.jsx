@@ -19,10 +19,10 @@ const types = {
     Past: "/csgo/tournaments/past"
 }
 
-export async function getTournamentsByType(sortParam, page) {
+export async function getTournamentsByType(sortParam, page, per_page) {
     const endpoint = types[sortParam]
     console.log(endpoint)
-    return api(`${endpoint}?page=${page}&per_page=9`)
+    return api(`${endpoint}?page=${page}&per_page=${per_page}`)
 }
 export async function getTournament(id) {
     return api(`/tournaments/${id}`)

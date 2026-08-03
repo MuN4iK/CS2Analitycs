@@ -15,7 +15,7 @@ function TournamentsPage() {
     useEffect(() => {
         async function load() {
             try {
-                const data = await getTournamentsByType(sortParam, page)
+                const data = await getTournamentsByType(sortParam, page, 9)
                 setTournamentData(prev => {
                     return page === 1
                         ? data

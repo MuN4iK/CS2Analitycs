@@ -14,7 +14,7 @@ export default function HomePage() {
         async function load() {
             try {
                 const [tournamentsData, matchesData] = await Promise.all([
-                    getTournamentsByType("running", 1),
+                    getTournamentsByType("Running", 1, 6),
                     getMatches()
                 ])
                 setTournament(tournamentsData)
