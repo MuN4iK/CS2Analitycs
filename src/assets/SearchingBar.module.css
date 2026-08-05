@@ -14,6 +14,7 @@
     border-radius: 20.5px;
     height: 45px;
     background: #2b3038;
+    transition: .5s;
 }
 
 .sortingMenuV2 {
@@ -26,6 +27,7 @@
     height: 45px;
     background: #2b3038;
     border-bottom: 1px solid #555;
+    transition: .5s;
 }
 
 .searchingBar {
@@ -52,7 +54,20 @@
     cursor: pointer;
 }
 
-.dropdownMenu {
+.dropdownMenuClosed {
+
+    justify-content: stretch;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: .5s;
+    width: 50%;
+}
+
+.dropdownMenuActive {
+    transform: scaleY(1);
+    opacity: 1;
     display: flex;
     background: #2b3038;
     width: 50%;
@@ -61,7 +76,7 @@
     border-bottom-left-radius: 20.5px;
     padding-bottom: 5px;
     padding-top: 5px;
-    justify-content: stretch;
+    transition: .5s;
 }
 
 .dropdownMenuTop {
